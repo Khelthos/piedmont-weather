@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import ListWeather from "./components/ListWeather";
+import "./App.css";
+import { requestWeather } from "./actions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const mapStateToProps = (state) => {
+  return {
+    weathers: state.requestWeather.weathers,
+    isPending: state.requestWeather.isPending,
+    error: state.requestWeather.error,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onrequestMeteo: () => dispatch(requestWeather()),
+  };
+};
+
+class App extends Component {
+  componentDidMount() {
+    this.props.onrequestMeteo();
+  }
+
+  render() {
+    const { weathers, isPending } = this.props;
+    return isPending ? (
+      <span className="ouro ouro3">
+        <span className="left">
+          <span className="anim"></span>
+        </span>
+        <span className="right">
+          <span className="anim"></span>
+        </span>
+      </span>
+    ) : (
+      <div className="tc">
+        <h1 className="f2">Piedmont Weather App</h1>
+        <ListWeather weathers={weathers} />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
