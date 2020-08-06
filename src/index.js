@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { requestWeather } from "./reducers";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import { Helmet } from "react-helmet";
 
 const logger = createLogger();
 const rootReducer = combineReducers({ requestWeather });
@@ -20,6 +20,11 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Piedmont Weather App</title>
+      <link rel="canonical" href="http://mysite.com/example" />
+    </Helmet>
     <App />
   </Provider>,
   document.getElementById("root")
