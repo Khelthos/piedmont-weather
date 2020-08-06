@@ -1,3 +1,11 @@
+# Piedmont Weather App
+
+A simple application that collects weather information from the OpenWeather API of the main cities in the Italian region where I live. A small experiment to get familiar with actions and reducers, I will improve my frontend skills.
+
+## Read this if you clone this repo
+
+You will find in the repository a file called "store.js", not finding a better way to hide my API key, I used a simple js file, inside it you will find only one variable and the name that must have the file to run the application.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
