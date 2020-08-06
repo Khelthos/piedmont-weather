@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Row } from "reactstrap";
 import { connect } from "react-redux";
 import ListWeather from "./components/ListWeather";
 import "./App.css";
@@ -35,9 +36,15 @@ class App extends Component {
         </span>
       </span>
     ) : (
-      <div className="tc">
-        <h1 className="f2">Piedmont Weather App</h1>
-        <ListWeather weathers={weathers} />
+      <div>
+        <div className="tc">
+          <h1 className="f2">Piedmont Weather App</h1>
+        </div>
+        <Container className="pl-5 pr-5">
+          <Row>
+            <ListWeather weathers={weathers} />
+          </Row>
+        </Container>
       </div>
     );
   }

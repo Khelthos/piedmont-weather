@@ -1,25 +1,55 @@
-.mdl-card--horizontal-2 {
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-height: 0px;
-}
-.mdl-card__title {
-  align-items: flex-start;
+.cardbgw {
+  background-color: rgb(37, 37, 37);
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 5px 5px #888888;
   flex-direction: column;
-  flex: 1 auto;
-  float: left;
+  margin: 10px 0 10px 0;
 }
-.mdl-card__title-text {
-  align-self: flex-start;
+
+.grow {
+  transition: all 0.2s ease-in-out;
 }
-.mdl-card__media {
-  flex: 0 auto;
-  float: right;
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.cardtitpro {
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+.celsSign {
+  font-weight: bold;
+  text-align: left;
+}
+
+.cardTemps {
+  text-align: left;
+}
+
+.icoBlue {
+  color: #65afff;
+}
+
+.icoRed {
+  color: #fe5f55;
+}
+
+.cardimgpro {
+  /* flex: 0 auto; */
+  /* float: right; */
+  align-self: center;
   height: 100px;
-  margin: 16px 16px 16px 0;
   width: 100px;
 }
-.mdl-card__actions {
-  clear: both;
-  flex: 1 auto;
+
+.cardStatus {
+  text-transform: uppercase;
+}
+
+#minmaxtemp {
+  text-align: right;
 }

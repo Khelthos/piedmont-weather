@@ -6,7 +6,7 @@ import {
 
 const initialStateWeather = {
   isPending: false,
-  weathers: {},
+  weathers: [],
   error: "",
 };
 
